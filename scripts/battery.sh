@@ -9,7 +9,7 @@ battery_percent()
 	# Check OS
 	case $(uname -s) in
 		Linux)
-			cat /sys/class/power_supply/BAT0/capacity
+            echo $(cat /sys/class/power_supply/BAT?/capacity)%
 		;;
 
 		Darwin)
@@ -17,7 +17,7 @@ battery_percent()
 		;;
 
 		CYGWIN*|MINGW32*|MSYS*|MINGW*)
-			# leaving empty - TODO - windows compatability
+			# leaving empty - TODO - windows compatibility
 		;;
 
 		*)
@@ -30,7 +30,7 @@ battery_status()
 	# Check OS
 	case $(uname -s) in
 		Linux)
-			status=$(cat /sys/class/power_supply/BAT0/status)
+			status=$(cat /sys/class/power_supply/BAT?/status)
 		;;
 
 		Darwin)
@@ -38,7 +38,7 @@ battery_status()
 		;;
 
 		CYGWIN*|MINGW32*|MSYS*|MINGW*)
-			# leaving empty - TODO - windows compatability
+			# leaving empty - TODO - windows compatibility
 		;;
 
 		*)
