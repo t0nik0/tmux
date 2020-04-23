@@ -46,9 +46,9 @@ battery_status()
 	esac
 
 	if [ $status = 'discharging' ] || [ $status = 'Discharging' ]; then
-		echo ''
+		echo 'DC ↓ '
 	else
-	 	echo 'AC '
+	 	echo 'AC ↑ '
 	fi
 }
 
@@ -56,7 +56,7 @@ main()
 {
 	bat_stat=$(battery_status)
 	bat_perc=$(battery_percent)
-	echo "♥ $bat_stat$bat_perc"
+	echo "ϟ $bat_stat$bat_perc"
 }
 
 #run main driver program
