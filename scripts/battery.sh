@@ -46,7 +46,7 @@ battery_status()
 	esac
 
 	if [ $status = 'discharging' ] || [ $status = 'Discharging' ]; then
-		echo 'DC ↓ '
+		echo 'Bat ↓ '
 	else
 	 	echo 'AC ↑ '
 	fi
